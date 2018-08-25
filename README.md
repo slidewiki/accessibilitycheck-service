@@ -1,4 +1,4 @@
-# Microservice Template #
+# Slide Accessibility Checker Tool #
 [![Build Status](https://travis-ci.org/slidewiki/microservice-template.svg?branch=master)](https://travis-ci.org/slidewiki/microservice-template)
 [![License](https://img.shields.io/badge/License-MPL%202.0-green.svg)](https://github.com/slidewiki/microservice-template/blob/master/LICENSE)
 [![Language](https://img.shields.io/badge/Language-Javascript%20ECMA2015-lightgrey.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
@@ -6,28 +6,24 @@
 [![Webserver](https://img.shields.io/badge/Webserver-Hapi%2016.4.0-blue.svg)](http://hapijs.com/)
 [![Coverage Status](https://coveralls.io/repos/github/slidewiki/microservice-template/badge.svg?branch=master)](https://coveralls.io/github/slidewiki/microservice-template?branch=master)
 
-This repository contains the template code for a NodeJS based Microservice of the Slidewiki 2.0 project. Please do **NOT** clone this repository and develop your application in it. Instead fork it (following the instructions below) and develop your application there. The CI maintainer ([Roy Meissner](https://github.com/rmeissn)) will setup continuous integration and delivery for your fork. Just notify him.
 
-Remember to exchange badge urls when forking!
+This repository contains a microservice for perforiming the following types of accessibility checks on a slide:
+- Checking if the slide has a heading
+- Checking if images have text alternatives
+- Checking that embeded content (iframes) has a title
+- Checking that text paragraphs are not justified
+- CHecking that tables have defined heading row or column
 
-## Forking ##
+
+## How to Test ##
 ---
-Unfortunatly Github doesn't allow someone to fork a repository into the same organization or even transfer ownership after a rename of a forked repository (shame on you, Github!). In order to fork this template, follow these easy steps:
+To test the microservice on your local machine please follow these steps:
+1. Navigate to the /application directory
+2. Run npm install
+3. Run npm start
+4. The default port of the microservice is 4000. To access the swagger interface visit localhost:4000/documentation
+5. Use the /check route to provide your request
 
-1. Create a new repository inside slidewiki organization with your desired name (e.g.: Deck-Service). Don't initiate the repository with a Readme or a license!
-2. Execute the following commands on your local machine
-3. Begin your work by altering README.md of your new service
-
-```
-# Clone the Microservice-Template to a folder named after your new service, e.g.: Deck-Service
-git clone git@github.com:slidewiki/Microservice-Template.git NAME_OF_YOUR_NEW_REPO
-cd NAME_OF_YOUR_NEW_REPO
-# Rename the actual origin and add your new repo as the default origin
-git remote rename origin template
-git remote add origin ORIGIN_OF_YOUR_NEW_REPO
-# e.g.: git remote add origin git@github.com:slidewiki/Deck-Service.git
-git push -u origin master
-```
 
 ### Install NodeJS ###
 ---
