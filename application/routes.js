@@ -8,7 +8,7 @@ const Joi = require('joi'),
   handlers = require('./controllers/handler');
 
 module.exports = function(server) {
-  //Get slide with id id from database and return it (when not available, return NOT FOUND). Validate id
+//Retrieve the slide id and the check settings
   server.route({
     method: 'POST',
     path: '/check',
@@ -16,16 +16,9 @@ module.exports = function(server) {
     config: {
       validate: {
         payload: Joi.object().keys({
-          title: Joi.string(),
-          slide: Joi.string(),
-          body: Joi.string(),
-          user_id: Joi.string().alphanum().lowercase(),
-          root_deck_id: Joi.string().alphanum().lowercase(),
-          parent_deck_id: Joi.string().alphanum().lowercase(),
-          no_new_revision: Joi.boolean(),
-          position: Joi.number().integer().min(0),
-          language: Joi.string()
-        }).requiredKeys('title', 'body'),
+          slide_id: Joi.string(),
+          settings: Joi.array(),
+        }).requiredKeys('slide_id', 'settings'),
       },
       tags: ['api'],
       description: 'Check a slide for accessibility errors'

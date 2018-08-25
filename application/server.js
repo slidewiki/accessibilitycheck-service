@@ -50,9 +50,9 @@ let plugins = [
     options: {
       host: host,
       info: {
-        title: 'Example API',
-        description: 'Powered by node, hapi, joi, hapi-swaggered, hapi-swaggered-ui and swagger-ui',
-        version: '0.1.0'
+        title: 'Accessibility Checker Microservice',
+        description: 'A microservice that checks SlideWiki slides for accessibility errors',
+        version: '0.9.0'
       }
     }
   }
