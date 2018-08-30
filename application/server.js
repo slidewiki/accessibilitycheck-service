@@ -58,7 +58,6 @@ let plugins = [
   }
 ];
 
-const createIndexes = require('./database/createIndexes');
 
 //Register plugins and start webserver
 server.register(plugins, (err) => {
@@ -66,16 +65,11 @@ server.register(plugins, (err) => {
     console.error(err);
     global.process.exit();
   } else {
-    // create any indexes before starting the server
-    createIndexes().catch((err) => {
-      console.warn('error creating the indexes on the database collection:');
-      console.warn(err.message);
-    }).then(() => {
-      server.start(() => {
-        server.log('info', 'Server started at ' + server.info.uri);
-        //Register routes
-        require('./routes.js')(server);
-      });
+    server.start(() => {
+      server.log('info', 'Server started at ' + server.info.uri);
+      //Register routes
+      require('./routes.js')(server);
     });
   }
+
 });
