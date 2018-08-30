@@ -1,10 +1,10 @@
 # Slide Accessibility Checker Tool #
-[![Build Status](https://travis-ci.org/slidewiki/microservice-template.svg?branch=master)](https://travis-ci.org/slidewiki/microservice-template)
-[![License](https://img.shields.io/badge/License-MPL%202.0-green.svg)](https://github.com/slidewiki/microservice-template/blob/master/LICENSE)
+[![Build Status](https://travis-ci.org/slidewiki/accessibilitycheck-service.svg?branch=master)](https://travis-ci.org/slidewiki/accessibilitycheck-service)
+[![License](https://img.shields.io/badge/License-MPL%202.0-green.svg)](https://github.com/slidewiki/accessibilitycheck-service/blob/master/LICENSE)
 [![Language](https://img.shields.io/badge/Language-Javascript%20ECMA2015-lightgrey.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![Framework](https://img.shields.io/badge/Framework-NodeJS%206.11.0-blue.svg)](https://nodejs.org/)
 [![Webserver](https://img.shields.io/badge/Webserver-Hapi%2016.4.0-blue.svg)](http://hapijs.com/)
-[![Coverage Status](https://coveralls.io/repos/github/slidewiki/microservice-template/badge.svg?branch=master)](https://coveralls.io/github/slidewiki/microservice-template?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/slidewiki/accessibilitycheck-service/badge.svg?branch=master)](https://coveralls.io/github/slidewiki/accessibilitycheck-service?branch=master)
 
 
 This repository contains a microservice for perforiming the following types of accessibility checks on a slide:
@@ -21,7 +21,7 @@ To test the microservice on your local machine please follow these steps:
 1. Navigate to the /application directory
 2. Run npm install
 3. Run npm start
-4. The default port of the microservice is 4000. To access the swagger interface visit localhost:4000/documentation
+4. The default port of the microservice is 3000. To access the swagger interface visit http://localhost:3000/documentation
 5. Use the /check route to provide your request
 
 

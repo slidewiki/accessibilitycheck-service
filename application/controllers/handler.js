@@ -5,12 +5,13 @@ Handles the requests by executing stuff and replying to the client. Uses promise
 
 'use strict';
 
-const boom = require('boom'), //Boom gives us some predefined http codes and proper responses
-co = require('../common');
+const boom = require('boom');
 const request = require('request');
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 var EventEmitter = require("events").EventEmitter;
+
+const Microservices = require('../configs/microservices');
 
 module.exports = {
 
@@ -24,7 +25,7 @@ module.exports = {
       settings = input.payload.settings;
       //694700-5
       //757435-2 ->Testing slide
-      request('https://deckservice.slidewiki.org/slide/'+slide_id, { json: true }, (err, res, body) => {
+      request(Microservices.deck.uri + '/slide/' + slide_id, { json: true }, (err, res, body) => {
         if (err) { return console.log(err); }
         getSlide.data = body.revisions[0].content;
         getSlide.emit('received');
