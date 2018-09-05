@@ -20,7 +20,7 @@ This repository contains a microservice for perforiming the following types of a
 To test the microservice on your local machine please follow these steps:
 1. Navigate to the /application directory
 2. Run npm install
-3. Run the following command to initialise the microservice: SERVICE_URL_DECK=https://deckservice.slidewiki.org VIRTUAL_HOST=localhost:3400 APPLICATION_PORT=3400 npm start
+3. Run the following command to initialise the microservice: ```SERVICE_URL_DECK=https://deckservice.slidewiki.org VIRTUAL_HOST=localhost:3400 APPLICATION_PORT=3400 npm start```
 4. To access the swagger interface visit http://localhost:3400/documentation
 5. Use the /check route to provide your request
 
